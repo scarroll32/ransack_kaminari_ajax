@@ -87,6 +87,7 @@ GEM
     crass (1.0.4)
     erubi (1.7.1)
     execjs (2.7.0)
+    ffaker (2.10.0)
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -235,6 +236,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  ffaker
   jbuilder (~> 2.5)
   jquery-rails
   kaminari

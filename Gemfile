@@ -9,6 +9,7 @@ gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem 'jquery-rails'
 gem 'bootstrap-generators'
+gem 'ffaker'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
