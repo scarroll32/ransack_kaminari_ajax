@@ -1,10 +1,14 @@
 class ComponentsController < ApplicationController
   before_action :set_component, only: [:show, :edit, :update, :destroy]
+  before_action :clear_search_index, :only => [:index]
 
   # GET /components
   # GET /components.json
   def index
-    @components = Component.all
+    @search = Component.ransack(params[:q])
+    # make name the default sort column
+    @search.sorts = 'name' if @search.sorts.empty?
+    @components = @search.result.page(params[:page]).per(5)
   end
 
   # GET /components/1
@@ -70,5 +74,16 @@ class ComponentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def component_params
       params.require(:component).permit(:name, :description)
+    end
+
+    def clear_search_index
+      if params[:search_cancel]
+        params.delete(:search_cancel)
+        if(!search_params.nil?)
+          search_params.each do |key, param|
+            search_params[key] = nil
+          end
+        end
+      end
     end
 end
