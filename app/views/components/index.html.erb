@@ -22,7 +22,7 @@
       <th>
         <%= f.submit 'Filter', class: 'btn btn-primary' %>
         <%= link_to 'Clear', components_path, class: 'btn btn-danger' %>
-        <%= @search.result.count %> components
+        <%= @components.total_count %> components
       </th>
     </tr>
   </thead>
