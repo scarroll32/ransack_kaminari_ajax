@@ -1,5 +1,5 @@
 <table class='table table-responsive table-hover table-striped'>
-  <%= search_form_for @search, url: components_path, html: { method: :get, class: 'ransack-form' } do |f| %>
+  <%= search_form_for @search, url: components_path, remote: true, html: { method: :get, class: 'ransack-form' } do |f| %>
   <thead>
     <tr>
       <th><%= sort_link(@search, :name, 'Name') %></th>
@@ -9,7 +9,10 @@
     <tr>
       <th><%= f.text_field :name_cont, class: 'form-control' %></th>
       <th><%= f.text_field :description_cont, class: 'form-control' %></th>
-      <th><%= f.submit 'Filter', class: 'btn btn-primary' %></th>
+      <th>
+        <%= f.submit 'Filter', class: 'btn btn-primary' %>
+        <%= link_to 'Clear', components_path, class: 'btn btn-danger' %>
+      </th>
     </tr>
   </thead>
   <% end %>

@@ -1,0 +1,4 @@
+//$('#table').html('<%= escape_javascript(render("table")) %>');
+$(".load-more").remove();
+$("table.components").append("<%= j render @components %>");
+$("#more-anchor").after("<%= j render partial: 'load_more', locals: { collection: @components } %>");
