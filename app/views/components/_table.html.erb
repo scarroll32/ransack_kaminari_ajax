@@ -9,7 +9,11 @@
     <tr>
       <th><%= f.text_field :name_cont, class: 'form-control' %></th>
       <th><%= f.text_field :description_cont, class: 'form-control' %></th>
-      <th><%= f.submit 'Filter', class: 'btn btn-primary' %></th>
+      <th>
+        <%= f.submit 'Filter', class: 'btn btn-primary', data: { disable_with: false } %>
+        <%= link_to 'Clear', components_path, class: 'btn btn-danger' %>
+        <%= @components.total_count %> components
+      </th>
     </tr>
   </thead>
   <% end %>
