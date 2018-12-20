@@ -15,7 +15,7 @@ class ComponentsController < ApplicationController
   #  end
   #end
 
-  
+
   # GET /components
   # GET /components.json
   def index
@@ -23,7 +23,6 @@ class ComponentsController < ApplicationController
     # make name the default sort column
     @search.sorts = 'name' if @search.sorts.empty?
     @components = @search.result.page(params[:page]).per(5)
-
   end
 
   # GET /components/1
