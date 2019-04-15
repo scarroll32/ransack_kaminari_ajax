@@ -2,6 +2,20 @@ class ComponentsController < ApplicationController
   before_action :set_component, only: [:show, :edit, :update, :destroy]
   before_action :clear_search_index, :only => [:index]
 
+
+  #respond_to do |format|
+  #  format.html
+  #  format.js do
+  #    render json: {
+  #      data: @components.,
+  #      nextpage: @components.current_page,
+  #      last: @components.last_page?
+  #    },
+  #    status: :ok
+  #  end
+  #end
+
+
   # GET /components
   # GET /components.json
   def index

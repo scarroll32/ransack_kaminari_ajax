@@ -1,0 +1,5 @@
+//$('#table').html('<%= escape_javascript(render("table")) %>');
+console.log('partial');
+$(".load-more").remove();
+$(".infinite-grid").append("<%= j render @speakers %>");
+$("#more-anchor").after("<%= j render partial: 'load_more', locals: { collection: @speakers } %>");
