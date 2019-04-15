@@ -1,3 +1,15 @@
+# Get Started 
+
+```
+git clone git@github.com:seanfcarroll/ransack_kaminari_ajax.git
+cd ransack_kaminari_ajax
+bundle 
+yarn
+rails db:setup
+```
+
+
+
 # Setup
 
 ```
